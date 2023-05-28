@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
-import '../dotenv.js';
+//import '../dotenv.js';
 let sequelize = null
 
 const getInstance = ()=>{
   try {
-    const { ENVIRONMENT } = process.env
+    //const { ENVIRONMENT } = process.env
   
     if (sequelize){
       console.log("returning instance already found...")

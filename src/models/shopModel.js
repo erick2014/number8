@@ -1,28 +1,35 @@
 import { DataTypes } from "sequelize"
-const {INTEGER,STRING} = DataTypes
-
 import { getInstance } from '../../dbs/setup.js'
 const sequelize = getInstance()
 
-const Shop = sequelize.define('Shop',{
+const schema = {
   id: {
-    type: INTEGER,
+    type: DataTypes.INTEGER,
     allowNull: false,
     primaryKey: true,
     autoIncrement: true
   },
   name: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   address: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false,
   },
   telephone: {
-    type: STRING,
+    type: DataTypes.STRING,
     allowNull: false,
   }
+}
+
+const Shop = sequelize.define('shop',schema,{
+  createdAt: false,
+  updatedAt:false,
+  freezeTableName:true
 })
 
-export default Shop
+export {
+  Shop,
+  schema
+}
