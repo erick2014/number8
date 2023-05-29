@@ -8,10 +8,14 @@ class ShopController{
     return parsedShops
   }
 
-  async newShop(req,res){
+  async newShop({name,address,telephone}){
     try {
-      res.send('new shop added')
-      next()
+      const shop = await Shop.create({
+        name,
+        address,
+        telephone,
+      })
+      return shop
     } catch (error) {
       throw error
     }
