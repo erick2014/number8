@@ -1,4 +1,4 @@
-import '../dotenv.js'
+import '../../dotenv.js'
 
 export default {
   development: {
