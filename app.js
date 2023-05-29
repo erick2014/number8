@@ -1,6 +1,6 @@
 import './dotenv.js'
 import express from "express";
-import router from './src/routes/shop.js'
+import router from './src/routes/index.js'
 
 const PORT = 4000;
 const app = express();
