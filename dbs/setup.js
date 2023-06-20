@@ -5,6 +5,10 @@ let sequelize = null
 const getInstance = ()=>{
   try {
     const { ENVIRONMENT } = process.env
+    console.log("ENVIRONMENT ",ENVIRONMENT)
+    if(ENVIRONMENT && ENVIRONMENT === 'test'){
+      return
+    }
   
     if (sequelize){
       console.log("returning instance already found...")

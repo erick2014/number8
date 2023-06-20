@@ -1,26 +1,34 @@
-import {Shop} from '../models/shopModel.js'
+//import {Model} from '../models/shopModel.js'
+const Shop = {
+  findAll: ({}) => {},
+  create: ()=>({
+    name: string,
+    address: string,
+    telephone: string,
+  })
+};
 
-class ShopController{
-
-  async getShops(){
-    const allShops = await Shop.findAll({})
-    const parsedShops = allShops.map(shop=>shop)
-    return parsedShops
+class ShopController {
+  async getShops() {
+    return Shop.findAll({ raw: true });
   }
 
-  async newShop({name,address,telephone}){
+  async newShop({
+    name,
+    address,
+    telephone,
+  }) {
     try {
       const shop = await Shop.create({
         name,
         address,
         telephone,
-      })
-      return shop
+      });
+      return shop;
     } catch (error) {
-      throw error
+      throw error;
     }
   }
-
 }
 
-export default ShopController
+module.exports = ShopController;
