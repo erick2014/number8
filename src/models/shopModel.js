@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize"
 import { getInstance } from '../../dbs/setup.js'
 const sequelize = getInstance()
-
 const schema = {
   id: {
     type: DataTypes.INTEGER,
